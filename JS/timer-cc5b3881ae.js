@@ -14,14 +14,7 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
 
 
 !function (t, e) { function i() { var t = $(".timer-main"), e = t.parent(); t.css("top", e.height() * -.22), t.css("font-size", .7 * e.height()); var i = $(".timer-accessory"); i.css("top", .55 * e.height()), i.css("padding-right", .03 * e.height()), i.css("padding-left", .03 * e.height()), i.find("h3").css("font-size", .045 * e.height()), i.find("p").css("font-size", .1 * e.height()).css("top", e.height() * -.02); var s = $(".timer li"); s.css("font-size", .07 * e.height()), s.css("padding-top", .05 * e.height()), $(".timer-reset").css("font-size", .07 * e.height()).css("padding-top", .06 * e.height()), $(".timer-start-toggle").css("font-size", .07 * e.height()).css("padding-top", .06 * e.height()) } $(t).resize(i), $(document).ready(i) }(window); var runloop = window.runloop || {}; !function (t, e) { var i = runloop.string.fromDuration, s = runloop.intervalsForDefinition(def), n = $(".timer"), o = $(".timer ul"), a = $(".timer-start-toggle"), r = $(".timer-reset"), h = new Audio("https://www.intervaltimer.com/sounds/a6-sine-100ms.mp3"), l = new Audio("https://www.intervaltimer.com/sounds/a6-sine-750ms.mp3"), u = runloop.createTimer().on("update", function () { $(".timer-elapsed p").text(i(u.elapsed())), $(".timer-remaining p").text(i(u.remaining() + .999)), $(".timer-main").text(i(u.interval().remaining() + .999)) }).on("change", function () { $(".timer-interval-count p").text(u.intervalCount()), n.animate({ backgroundColor: runloop.colorForType(u.interval().color) }, 250), o.animate({ left: -50 * u.currentIntervalIndex() + "%" }) }).on("complete", function () { $(".timer-main").text(i(0)), $(".timer-remaining p").text(i(0)), n.animate({ backgroundColor: runloop.colorForType(0) }, 250), o.animate({ left: -50 * s.length + "%" }) }).on("start", function () { a.find("span").removeClass("glyphicon-play").addClass("glyphicon-pause") }).on("stop", function () { a.find("span").removeClass("glyphicon-pause").addClass("glyphicon-play") }).on("alert-interval", function () {
-    
-    var playedPromise = l.play();
-if (playedPromise !== undefined) {
-    playedPromise["catch"](function(A) {
-        console.log("Play error: " + A.message);
-        
-    })
-}
+l.load();
     l.play();
 
 
