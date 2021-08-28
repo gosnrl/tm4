@@ -22,7 +22,7 @@ if (playedPromise !== undefined) {
         
     })
 }
-    l.play() 
+    l.play();
 
 
 }).on("alert-timer", function () { c.play() }), c = new Audio("https://www.intervaltimer.com/sounds/a6-sine-750ms-end.mp3");
