@@ -17,6 +17,7 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
     l.play().catch((err) => {
     if (err.name === 'NotAllowedError') {
       // Display PLAY button with a click event listener and play the video there.
+        console.log("gggggggggg");
     }
   });
 
