@@ -18,7 +18,15 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
     l.play().catch((err) => {
     if (err.name === 'NotAllowedError') {
       // Display PLAY button with a click event listener and play the video there.
-        document.querySelector('audio').play();
+      //  document.querySelector('audio').play();
+        const soundEffect = new Audio();
+
+// onClick of first interaction on page before I need the sounds
+soundEffect.play();
+
+// later on when you actually want to play a sound at any point without user interaction
+soundEffect.src = 'https://www.intervaltimer.com/sounds/a6-sine-750ms.mp3';
+soundEffect.play();
         
         console.log('gggggggggg');
         
