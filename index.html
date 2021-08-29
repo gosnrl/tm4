@@ -19,9 +19,10 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
            /^Mac/.test(navigator.platform) && navigator.maxTouchPoints > 4;
 
            if(iOSiPadOS){
-               console.log('ipad');
+               //console.log('ipad');
            } else {
-                console.log('andiod&window');
+                $('button').hide();
+                //console.log('andiod&window');
            }
 
 </script>
