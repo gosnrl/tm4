@@ -26,36 +26,6 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
 
 </script>
     
-    
-    <script>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            /* Loop through a collection of all HTML elements: */
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("include-html");
-                if (file) {
-                    /* Make an HTTP request using the attribute value as the file name: */
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                            /* Remove the attribute, and call this function once more: */
-                            elmnt.removeAttribute("include-html");
-                            includeHTML();
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    /* Exit the function: */
-                    return;
-                }
-            }
-        }
-    </script>
 
     <noscript>
         <link rel="stylesheet" href="./CSS/app-bab664bd2a.css">
@@ -104,28 +74,18 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
         <audio  id="intervalsound">
           <source src="https://www.intervaltimer.com/sounds/a6-sine-750ms.mp3" type="audio/mp3">
         </audio>
-     
-             
-             
-        <audio controls id ="intervalendsound">
+        <audio id ="intervalendsound">
           <source src="https://www.intervaltimer.com/sounds/a6-sine-750ms-end.mp3" type="audio/mp3">
         </audio>
       </div>
 
-    <button>play</button>
+    <button class="snip1535">iOS :  press button </button>
     
     <script src="./JS/core-093ab4e59f.js"></script>
     <link rel="stylesheet" href="./CSS/jquery-ui.css">
     <script>
 
-$('button').on('click', function(){
-    $('#intervalsound').get(0).play();
-});
         
-
-$('button').on('click', function(){
-    $('#intervalendsound').get(0).play();
-});
         
         var def = {"via":"web","name":"Custom Timer","type":0,"numberOfSets":1,"soundScheme":8,"intervals":[{"name":"Interval 1","duration":3,"color":0,"$$hashKey":"object:3"},{"name":"Interval 2","duration":3,"color":0,"$$hashKey":"object:9"},{"name":"Interval 3","duration":3,"color":0,"$$hashKey":"object:19"},{"name":"Interval 4","duration":3,"color":0,"$$hashKey":"object:33"}]};
         
@@ -134,11 +94,25 @@ $('button').on('click', function(){
     </script>
     <script src="./JS/timer-cc5b3881ae.js"></script>
     <script>
+        $('button').on('click', function(){
+            $('#intervalsound').get(0).play();
+        });
+        $('button').on('click', function(){
+            $('#intervalendsound').get(0).play();
+        });
+        
         window.addEventListener('load', function() {
-  let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
+          let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
 
-  window.top.postMessage(message, "*");
+      window.top.postMessage(message, "*");
 });
+        
+        $(".hover").mouseleave(
+  function() {
+    $(this).removeClass("hover");
+  }
+);
+        
     </script>
 </body>
 
