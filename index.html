@@ -133,6 +133,13 @@ $('button').on('click', function(){
 
     </script>
     <script src="./JS/timer-cc5b3881ae.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+  let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
+
+  window.top.postMessage(message, "*");
+});
+    </script>
 </body>
 
 </html>
