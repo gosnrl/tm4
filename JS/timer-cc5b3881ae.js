@@ -18,7 +18,7 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
     l.play().catch((err) => {
     if (err.name === 'NotAllowedError') {
       // Display PLAY button with a click event listener and play the video there.
-        document.querySelector('audio').play();
+        document.querySelector('#intervalsound').play();
         
         
       //  const soundEffect = new Audio();
@@ -48,7 +48,20 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
 
 
 
-}).on("alert-timer", function () { c.play() }), c = new Audio("https://www.intervaltimer.com/sounds/a6-sine-750ms-end.mp3");
+}).on("alert-timer", function () { 
+    
+    c.play().catch((err) => {
+    if (err.name === 'NotAllowedError') {
+      // Display PLAY button with a click event listener and play the video there.
+        document.querySelector('#intervalendsound').play();
+       
+        console.log('endendendendendend');
+        
+    }
+  }); 
+
+
+}), c = new Audio("https://www.intervaltimer.com/sounds/a6-sine-750ms-end.mp3");
 
 
 
