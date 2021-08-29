@@ -12,20 +12,7 @@
     <link rel="stylesheet" href="./CSS/app-bab664bd2a.css" media="all">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-    <script>    
-// iPhone and iPad including iPadOS 13+ regardless of desktop mode settings
-
-const iOSiPadOS = /^iP/.test(navigator.platform) ||
-           /^Mac/.test(navigator.platform) && navigator.maxTouchPoints > 4;
-
-           if(iOSiPadOS){
-               //console.log('ipad');
-           } else {
-                $('button').hide();
-                //console.log('andiod&window');
-           }
-
-</script>
+   
     
 
     <noscript>
@@ -115,6 +102,26 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
 );
         
     </script>
+    
+     <script>    
+// iPhone and iPad including iPadOS 13+ regardless of desktop mode settings
+
+const iOSiPadOS = /^iP/.test(navigator.platform) ||
+           /^Mac/.test(navigator.platform) && navigator.maxTouchPoints > 4;
+
+           if(iOSiPadOS){
+               //console.log('ipad');
+           } else {
+                $('button').hide();
+                //console.log('andiod&window');
+           }
+
+        $('button').ready( function() {
+        $('button').click( function() {
+          $( '.box1' ).hide();
+        
+</script>
+    
 </body>
 
 </html>
