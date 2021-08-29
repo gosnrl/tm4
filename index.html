@@ -101,11 +101,14 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
     </div>
 
          <div class="audio-container">
-        <audio controls>
+        <audio controls id="intervalsound">
           <source src="https://www.intervaltimer.com/sounds/a6-sine-750ms.mp3" type="audio/mp3">
         </audio>
+     
+        <audio controls id ="intervalendsound">
+          <source src="https://www.intervaltimer.com/sounds/a6-sine-750ms-end.mp3" type="audio/mp3">
+        </audio>
       </div>
-    
 
     <script src="./JS/core-093ab4e59f.js"></script>
     <link rel="stylesheet" href="./CSS/jquery-ui.css">
