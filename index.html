@@ -73,6 +73,7 @@
     <button class="snip1535 timer-start-toggle">Timer Start</button>
     
     <div id="overlay" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+        <button class="snip1535 timer-start-toggle">Timer Start</button>
         <table style="width: 100%; height: 100%">
             <tbody><tr>
                 <td align="center">
@@ -108,19 +109,19 @@
         $('button').on('click', function(){
             $('#intervalendsound').get(0).play();
         });
+        $('button').on('click', function(){
+            $('#intervalstartsound').get(0).play();
+        });
         
         window.addEventListener('load', function() {
           let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
 
-      window.top.postMessage(message, "*");
-});
+        window.top.postMessage(message, "*");
+        });
         
-        $(".hover").mouseleave(
-  function() {
-    $(this).removeClass("hover");
-  }
-);
-        
+        $(".hover").mouseleave(function() {
+            $(this).removeClass("hover");
+            });     
     </script>
     
      <script>    
