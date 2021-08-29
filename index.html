@@ -119,7 +119,8 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
     <script>
 
 $('button').on('click', function(){
-    $('#intervalsound').get(0).play();
+    $('#intervalsound').get(0).play().on('click', function(){
+       $('#intervalendsound').get(0).play();
     
 });
         
