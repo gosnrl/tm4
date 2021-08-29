@@ -19,30 +19,7 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
     if (err.name === 'NotAllowedError') {
       // Display PLAY button with a click event listener and play the video there.
         document.querySelector('#intervalsound').play();
-        
-        
-      //  const soundEffect = new Audio();
-
-// onClick of first interaction on page before I need the sounds
-// soundEffect.play();
-
-// later on when you actually want to play a sound at any point without user interaction
-// soundEffect.src = 'https://www.intervaltimer.com/sounds/a6-sine-750ms.mp3';
-// soundEffect.play();
-        
-        
-       // const soundEffect = new Audio();
-// soundEffect.autoplay = true;
-
-// onClick of first interaction on page before I need the sounds
-// (This is a tiny MP3 file that is silent and extremely short - retrieved from https://bigsoundbank.com and then modified)
-// soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
-
-// later on when you actually want to play a sound at any point without user interaction
-// soundEffect.src = 'https://www.intervaltimer.com/sounds/a6-sine-750ms.mp3';
-        
-        console.log('gggggggggg');
-        
+        //console.log('gggggggggg');
     }
   });
 
@@ -54,9 +31,7 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
     if (err.name === 'NotAllowedError') {
       // Display PLAY button with a click event listener and play the video there.
         document.querySelector('#intervalendsound').play();
-       
-        console.log('endendendendendend');
-        
+       // console.log('endendendendendend');
     }
   }); 
 
@@ -65,4 +40,31 @@ this.refresh(),this.offset=this.element.offset(),this._mouseInit(),this._setHand
 
 
 
-u.setIntervals(s),o.css("width",50*(s.length+1)+"%"),n.css("background-color",runloop.colorForType(s[0].color)),n.click(function(){u.toggle()}),a.click(function(t){u.toggle(),t.stopPropagation()}),a.mousedown(function(){h.play()}),r.click(function(t){u.reset(),t.stopPropagation()}),r.mousedown(function(){h.play()});for(var d,p=function(t){return function(e){u.jump(t),u.start(),h.play(),e.stopPropagation()}},f=0;f<s.length;f++)d=$("<li>"+s[f].name+"</li>").css("background-color",runloop.colorForType(s[f].color)).css("width",100/(s.length+1)+"%"),d.appendTo(o),d.click(p(f));d=$("<li>End of Timer</li>").css("background-color",runloop.colorForType(0)).css("width",100/(s.length+1)+"%"),d.appendTo(o)}(window);
+u.setIntervals(s),o.css("width",50*(s.length+1)+"%"),n.css("background-color",runloop.colorForType(s[0].color)),n.click(function(){u.toggle()}),a.click(function(t){u.toggle(),t.stopPropagation()}),a.mousedown(function(){
+    
+    h.play().catch((err) => {
+    if (err.name === 'NotAllowedError') {
+      // Display PLAY button with a click event listener and play the video there.
+        document.querySelector('#intervalstartsound').play();
+    }
+  }); 
+
+}),r.click(function(t){u.reset(),t.stopPropagation()}),r.mousedown(function(){
+    
+    h.play().catch((err) => {
+    if (err.name === 'NotAllowedError') {
+      // Display PLAY button with a click event listener and play the video there.
+        document.querySelector('#intervalstartsound').play();
+    }
+  }); 
+
+});for(var d,p=function(t){return function(e){u.jump(t),u.start(),
+    
+    h.play().catch((err) => {
+    if (err.name === 'NotAllowedError') {
+      // Display PLAY button with a click event listener and play the video there.
+        document.querySelector('#intervalstartsound').play();
+    }
+  }); 
+    
+    ,e.stopPropagation()}},f=0;f<s.length;f++)d=$("<li>"+s[f].name+"</li>").css("background-color",runloop.colorForType(s[f].color)).css("width",100/(s.length+1)+"%"),d.appendTo(o),d.click(p(f));d=$("<li>End of Timer</li>").css("background-color",runloop.colorForType(0)).css("width",100/(s.length+1)+"%"),d.appendTo(o)}(window);
