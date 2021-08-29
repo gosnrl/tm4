@@ -65,6 +65,6 @@ u.setIntervals(s),o.css("width",50*(s.length+1)+"%"),n.css("background-color",ru
       // Display PLAY button with a click event listener and play the video there.
         document.querySelector('#intervalstartsound').play();
     }
-  }); 
+  }) 
     
     ,e.stopPropagation()}},f=0;f<s.length;f++)d=$("<li>"+s[f].name+"</li>").css("background-color",runloop.colorForType(s[f].color)).css("width",100/(s.length+1)+"%"),d.appendTo(o),d.click(p(f));d=$("<li>End of Timer</li>").css("background-color",runloop.colorForType(0)).css("width",100/(s.length+1)+"%"),d.appendTo(o)}(window);
