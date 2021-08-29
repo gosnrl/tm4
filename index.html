@@ -70,7 +70,7 @@
         </audio>
       </div>
 
-    <button class="snip1535 timer-start-toggle">Timer Start</button>
+<!--    <button class="snip1535 timer-start-toggle">Timer Start</button> -->
     
     <div id="overlay" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
         
@@ -141,6 +141,7 @@ const iOSiPadOS = /^iP/.test(navigator.platform) ||
 
       $('button').click( function() {
           $('button').hide();
+          $('#overlay').hide();
       });
          
          $('#overlay').click( function() {
